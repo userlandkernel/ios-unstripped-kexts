@@ -1,0 +1,209 @@
+#!/bin/sh
+
+# values returned by `ioavtool -location`
+LOC_EXTERNAL=External
+LOC_INTERNAL=Embedded
+
+LOG_OPTIONS="--last 15m"
+
+function usage {
+    echo "`basename $0` [-ah] [-t time]"
+    echo "-h/--help print this help"
+    echo "DO NOT USE THE FOLLOWING OPTIONS UNLESS ASKED TO DO SO:"
+    echo "-a        print all available syslog output, could be very large"
+    echo "-t        print syslog output from the last #[m|h|d]"
+}
+
+while :; do
+    case $1 in
+        -h|--help)
+            usage >&2
+            exit
+            ;;
+        -t)
+          if [ -n "$2" ]; then
+              LOG_OPTIONS="--last $2"
+              shift
+          else
+              printf 'ERROR: "-t" requires #[m|h|d] e.g -t 3h\n' >&2
+              exit 1
+            fi
+            ;;
+        -a)
+            LOG_OPTIONS=""
+            ;;
+        -internal)
+            #ignore
+            ;;
+        --)              # End of all options.
+            shift
+            break
+            ;;
+        -?*)
+            printf 'Unknown option : %s\n' "$1" >&2
+            usage >&2
+            exit 1
+            ;;
+        *)               # Default case: If no more options then break out of the loop.
+            break
+    esac
+
+    shift
+done
+
+echo -------------------------------
+echo *********SYSTEM INFO***********
+echo -------------------------------
+ioavtool -sysinfo
+echo
+
+if type -t CADebug > /dev/null; then
+    echo -------------------------------
+    echo ********CADebug INFO***********
+    echo -------------------------------
+    CADebug --displays
+    echo
+fi
+
+echo -------------------------------
+echo *********IOREG INFO************
+echo -------------------------------
+ioreg -c IOAVController -w 0 -rd 10 -l
+
+echo "IOAVController Roots:"
+ioavtool -roots IOService
+echo
+
+for ROOT in `ioavtool -roots IOService`; do
+    LOCATION=`ioavtool -root "${ROOT}" -location`
+
+    echo ================================================================================
+    echo ${ROOT}
+    echo ================================================================================
+
+    echo -------------------------------
+    echo ***********AV LINK*************
+    echo -------------------------------
+    # print DP link training info, if applicable
+    if type -t displayPort > /dev/null; then
+        displayPort -root "${ROOT}" -ct
+    fi
+    ioavtool -root "${ROOT}" -cl
+
+    # external only
+    if [ ${LOCATION} = ${LOC_EXTERNAL} ]; then
+        echo -------------------------------
+        echo *********AV SINK INFO***********
+        echo -------------------------------
+        ioavtool -root "${ROOT}" -info
+    fi
+
+    echo -------------------------------
+    echo *********AV ELEMENTS***********
+    echo -------------------------------
+    ioavtool -root "${ROOT}" -ls
+
+    # external only
+    if [ ${LOCATION} = ${LOC_EXTERNAL} ]; then
+        if type -t bluesteel > /dev/null; then
+            echo -------------------------------
+            echo *******BLUESTEEL INFO**********
+            echo -------------------------------
+            echo "Firmware Mode:  `bluesteel -mode`"
+            echo -------------------------------
+            echo *******BLUESTEEL LINK**********
+            echo -------------------------------
+            bluesteel -cl
+            echo
+        fi
+
+        if type -t snowwhite > /dev/null; then
+            echo -------------------------------
+            echo *******SNOWWHITE INFO**********
+            echo -------------------------------
+            snowwhite -info
+            echo
+        fi
+
+        if type -t hoover > /dev/null; then
+            echo -------------------------------
+            echo *******HOOVER INFO**********
+            echo -------------------------------
+            hoover -info
+            echo
+        fi
+
+        if type -t madea > /dev/null; then
+            echo -------------------------------
+            echo *******MADEA INFO**********
+            echo -------------------------------
+            madea -info
+            echo
+        fi
+    fi
+
+    if type -t IOMFBDebug > /dev/null; then
+        echo -------------------------------
+        echo *********IOMFB INFO************
+        echo -------------------------------
+        if [ ${LOCATION} = ${LOC_INTERNAL} ]; then
+            IOMFBDebug -d 0
+        else
+            IOMFBDebug -d 1
+        fi
+        echo
+    fi
+
+    echo -------------------------------
+    echo ***AV CONTROLLER REGISTERS*****
+    echo -------------------------------
+    ioavtool -root "${ROOT}" -rall IOAVController
+
+    echo -------------------------------
+    echo *****AV DEVICE REGISTERS*******
+    echo -------------------------------
+    ioavtool -root "${ROOT}" -rall IOAVDevice
+
+    echo -------------------------------
+    echo *****AV SERVICE REGISTERS******
+    echo -------------------------------
+    ioavtool -root "${ROOT}" -rall IOAVService
+
+    echo -------------------------------
+    echo ***AV CONTROLLER EVENT LOG*****
+    echo -------------------------------
+    ioavtool -root "${ROOT}" -history IOAVController -events IOAVController
+
+    echo -------------------------------
+    echo *****AV DEVICE EVENT LOG*******
+    echo -------------------------------
+    ioavtool -root "${ROOT}" -history IOAVDevice -events IOAVDevice
+
+    echo -------------------------------
+    echo *****AV SERVICE EVENT LOG******
+    echo -------------------------------
+    ioavtool -root "${ROOT}" -history IOAVService -events IOAVService
+
+    # external only
+    if [ ${LOCATION} = ${LOC_EXTERNAL} ]; then
+        echo -------------------------------
+        echo ****AUDIO DRIVER EVENT LOG*****
+        echo -------------------------------
+        ioavtool -root "${ROOT}" -history IOAVAudioDriver -events IOAVAudioDriver
+    fi
+
+    echo
+done
+
+if type -t log > /dev/null; then
+    echo -------------------------------
+    echo ***********SYSLOG**************
+    echo -------------------------------
+    log show --predicate 'processImagePath contains[c] "backboardd" or processImagePath contains[c] "launchd" or processImagePath contains[c] "PineBoard" or processImagePath contains[c] "SpringBoard" or processID == 0' $LOG_OPTIONS
+fi
+
+echo -------------------------------
+echo *******LOGGING COMPLETE********
+echo -------------------------------
+
+echo Please copy all the data above into a text file and attach it to your bug
