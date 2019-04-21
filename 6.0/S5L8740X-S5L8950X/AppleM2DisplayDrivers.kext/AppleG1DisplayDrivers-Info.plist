@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.driver.AppleG1DisplayDrivers</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>KEXT</string>
+	<key>CFBundleShortVersionString</key>
+	<string>116.0</string>
+	<key>CFBundleSignature</key>
+	<string>appl</string>
+	<key>CFBundleVersion</key>
+	<string>116.0</string>
+	<key>IOKitPersonalities</key>
+	<dict>
+		<key>AppleG1DisplayDrivers</key>
+		<dict>
+			<key>IOClass</key>
+			<string>AppleG1DisplayDrivers</string>
+			<key>IONameMatch</key>
+			<string>displaypipe,s5l8747x</string>
+			<key>IOProviderClass</key>
+			<string>AppleARMIODevice</string>
+		</dict>
+	</dict>
+	<key>OSBundleLibraries</key>
+	<dict>
+		<key>com.apple.driver.AppleARMPlatform</key>
+		<string>1.0.0</string>
+		<key>com.apple.iokit.IOAVFamily</key>
+		<string>1.0.0</string>
+		<key>com.apple.iokit.IOMobileGraphicsFamily</key>
+		<string>1.0</string>
+		<key>com.apple.kpi.bsd</key>
+		<string>8.4.1</string>
+		<key>com.apple.kpi.iokit</key>
+		<string>8.0</string>
+		<key>com.apple.kpi.libkern</key>
+		<string>8.0</string>
+		<key>com.apple.kpi.mach</key>
+		<string>8.0</string>
+		<key>com.apple.kpi.unsupported</key>
+		<string>8.0</string>
+	</dict>
+</dict>
+</plist>

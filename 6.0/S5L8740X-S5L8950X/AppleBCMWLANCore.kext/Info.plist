@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>11D51</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>AppleBCMWLANCore</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.driver.AppleBCMWLANCore</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Broadcom 802.11 Driver</string>
+	<key>CFBundlePackageType</key>
+	<string>KEXT</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>iPhoneOS</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.0.0</string>
+	<key>DTCompiler</key>
+	<string></string>
+	<key>DTPlatformBuild</key>
+	<string>10A394</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTPlatformVersion</key>
+	<string>6.0</string>
+	<key>DTSDKBuild</key>
+	<string>10A394</string>
+	<key>DTSDKName</key>
+	<string>iphoneos6.0.internal</string>
+	<key>DTXcode</key>
+	<string>0450</string>
+	<key>DTXcodeBuild</key>
+	<string>4G142</string>
+	<key>FirmwareVersion 4325</key>
+	<string>4.217.87.26</string>
+	<key>FirmwareVersion 4329</key>
+	<string>4.221.54.24</string>
+	<key>FirmwareVersion J2</key>
+	<string>5.90.207.65</string>
+	<key>FirmwareVersion J33</key>
+	<string>5.90.207.65</string>
+	<key>FirmwareVersion J33i</key>
+	<string>6.10.56.189</string>
+	<key>FirmwareVersion K66</key>
+	<string>4.221.54.24</string>
+	<key>FirmwareVersion K94</key>
+	<string>4.221.120.0</string>
+	<key>FirmwareVersion N41</key>
+	<string>6.10.56.189</string>
+	<key>FirmwareVersion N78</key>
+	<string>6.10.56.189</string>
+	<key>FirmwareVersion N81</key>
+	<string>4.221.54.24</string>
+	<key>FirmwareVersion N88</key>
+	<string>4.217.87.26</string>
+	<key>FirmwareVersion N90</key>
+	<string>4.221.54.24</string>
+	<key>FirmwareVersion N92</key>
+	<string>4.221.120.0</string>
+	<key>FirmwareVersion N94</key>
+	<string>5.90.207.65</string>
+	<key>FirmwareVersion P101</key>
+	<string>6.10.56.189</string>
+	<key>FirmwareVersion P102</key>
+	<string>6.10.56.189</string>
+	<key>FirmwareVersion P103</key>
+	<string>6.10.56.189</string>
+	<key>FirmwareVersion P105</key>
+	<string>6.10.56.189</string>
+	<key>FirmwareVersion P106</key>
+	<string>6.10.56.189</string>
+	<key>FirmwareVersion P107</key>
+	<string>6.10.56.189</string>
+	<key>IOKitPersonalities</key>
+	<dict>
+		<key>AppleBCMWLAN HSIC</key>
+		<dict>
+			<key>AppleBCMWLANCorePowerManaged</key>
+			<false/>
+			<key>IOClass</key>
+			<string>AppleBCMWLANCore</string>
+			<key>IOMatchCategory</key>
+			<string>com.apple.driver.AppleBCMWLANCore</string>
+			<key>IONetworkRootType</key>
+			<string>airport</string>
+			<key>IOProviderClass</key>
+			<string>AppleBCMWLANBusInterfaceHSIC</string>
+			<key>IOResourceMatch</key>
+			<string>IOBSD</string>
+		</dict>
+		<key>AppleBCMWLAN SDIO</key>
+		<dict>
+			<key>AppleBCMWLANCorePowerManaged</key>
+			<true/>
+			<key>IOClass</key>
+			<string>AppleBCMWLANCore</string>
+			<key>IOMatchCategory</key>
+			<string>com.apple.driver.AppleBCMWLANCore</string>
+			<key>IONetworkRootType</key>
+			<string>airport</string>
+			<key>IOProviderClass</key>
+			<string>AppleBCMWLANBusInterfaceSdio</string>
+			<key>IOResourceMatch</key>
+			<string>IOBSD</string>
+		</dict>
+	</dict>
+	<key>MinimumOSVersion</key>
+	<string>6.0</string>
+	<key>Module Map</key>
+	<dict>
+		<key>HEIN</key>
+		<array>
+			<string>P101</string>
+			<string>P102</string>
+			<string>P103</string>
+			<string>P105</string>
+			<string>P106</string>
+			<string>P107</string>
+		</array>
+		<key>MARZ</key>
+		<array>
+			<string>J33i</string>
+		</array>
+	</dict>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2008-2009 Apple Inc. All rights reserved.</string>
+	<key>OSBundleCompatibleVersion</key>
+	<string>1.0</string>
+	<key>OSBundleLibraries</key>
+	<dict>
+		<key>com.apple.driver.AppleARMPlatform</key>
+		<string>1.0.0</string>
+		<key>com.apple.driver.AppleOnboardSerial</key>
+		<string>1.0</string>
+		<key>com.apple.iokit.IO80211Family</key>
+		<string>1.5.0</string>
+		<key>com.apple.iokit.IONetworkingFamily</key>
+		<string>1.5.0</string>
+		<key>com.apple.kpi.bsd</key>
+		<string>8.0.0</string>
+		<key>com.apple.kpi.iokit</key>
+		<string>8.0.0</string>
+		<key>com.apple.kpi.libkern</key>
+		<string>8.0.0</string>
+		<key>com.apple.kpi.mach</key>
+		<string>8.0.0</string>
+		<key>com.apple.kpi.private</key>
+		<string>8.0.0</string>
+		<key>com.apple.kpi.unsupported</key>
+		<string>8.0.0</string>
+	</dict>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+</dict>
+</plist>

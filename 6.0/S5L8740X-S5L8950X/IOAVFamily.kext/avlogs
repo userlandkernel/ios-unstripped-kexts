@@ -1,0 +1,79 @@
+#!/bin/sh
+echo -------------------------------
+echo *********SYSTEM INFO***********
+echo -------------------------------
+ioavtool -sysinfo
+echo -------------------------------
+echo *********IOREG INFO************
+echo -------------------------------
+ioreg -c IOAVController -w 0 -rd 10 -l;
+echo -------------------------------
+echo ***********AV LINK*************
+echo -------------------------------
+ioavtool -cl;
+echo -------------------------------
+echo *********AV SINK INFO***********
+echo -------------------------------
+ioavtool -info;
+echo -------------------------------
+echo *********AV ELEMENTS***********
+echo -------------------------------
+ioavtool -ls;
+if type -t bluesteel > /dev/null; then
+    echo -------------------------------
+    echo *******BLUESTEEL INFO**********
+    echo -------------------------------
+    echo "Firmware Mode:  `bluesteel -mode`"
+    echo -------------------------------
+    echo *******BLUESTEEL LINK**********
+    echo -------------------------------
+    bluesteel -cl;
+fi
+if type -t snowwhite > /dev/null; then
+    echo -------------------------------
+    echo *******SNOWWHITE INFO**********
+    echo -------------------------------
+    snowwhite -info
+fi
+if type -t IOMFBDebug > /dev/null; then
+    echo -------------------------------
+    echo *********IOMFB INFO************
+    echo -------------------------------
+    IOMFBDebug -d 1
+fi
+echo -------------------------------
+echo ***AV CONTROLLER REGISTERS*****
+echo -------------------------------
+ioavtool -rall IOAVController;
+echo -------------------------------
+echo *****AV DEVICE REGISTERS*******
+echo -------------------------------
+ioavtool -rall IOAVDevice;
+echo -------------------------------
+echo *****AV SERVICE REGISTERS******
+echo -------------------------------
+ioavtool -rall IOAVService;
+echo -------------------------------
+echo ***AV CONTROLLER EVENT LOG*****
+echo -------------------------------
+ioavtool -history IOAVController -events IOAVController
+echo -------------------------------
+echo *****AV DEVICE EVENT LOG*******
+echo -------------------------------
+ioavtool -history IOAVDevice -events IOAVDevice
+echo -------------------------------
+echo *****AV SERVICE EVENT LOG******
+echo -------------------------------
+ioavtool -history IOAVService -events IOAVService
+if type -t syslog > /dev/null; then
+    echo -------------------------------
+    echo ***********SYSLOG**************
+    echo -------------------------------
+    syslog;
+fi
+echo -------------------------------
+echo *******LOGGING COMPLETE********
+echo -------------------------------
+
+echo Please copy all the data above into a text file and attach it to your bug
+

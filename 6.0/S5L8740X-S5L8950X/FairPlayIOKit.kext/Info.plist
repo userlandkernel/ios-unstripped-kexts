@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>FairPlayIOKit</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.driver.FairPlayIOKit</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>FairPlayIOKit</string>
+	<key>CFBundlePackageType</key>
+	<string>KEXT</string>
+	<key>CFBundleShortVersionString</key>
+	<string>52.78.6</string>
+	<key>CFBundleSignature</key>
+	<string>APPL</string>
+	<key>CFBundleVersion</key>
+	<string>52.78.6</string>
+	<key>IOKitPersonalities</key>
+	<dict>
+		<key>FairPlayIOKit</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.FairPlayIOKit</string>
+			<key>IOClass</key>
+			<string>com_apple_driver_FairPlayIOKit</string>
+			<key>IOKitDebug</key>
+			<integer>0</integer>
+			<key>IOMatchCategory</key>
+			<string>FairPlayIOKit</string>
+			<key>IOProviderClass</key>
+			<string>IOResources</string>
+			<key>IOResourceMatch</key>
+			<string>IOKit</string>
+			<key>IOUserClientClass</key>
+			<string>com_apple_driver_FairPlayIOKitUserClient</string>
+		</dict>
+	</dict>
+	<key>OSBundleCompatibleVersion</key>
+	<string>3.3.0d1</string>
+	<key>OSBundleLibraries</key>
+	<dict>
+		<key>com.apple.kpi.bsd</key>
+		<string>8.0.0</string>
+		<key>com.apple.kpi.iokit</key>
+		<string>8.0.0</string>
+		<key>com.apple.kpi.libkern</key>
+		<string>8.0.0</string>
+		<key>com.apple.kpi.mach</key>
+		<string>8.0.0</string>
+		<key>com.apple.kpi.private</key>
+		<string>8.0.0</string>
+		<key>com.apple.kpi.unsupported</key>
+		<string>9.3.1</string>
+	</dict>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2008-2009 Apple Inc. All rights reserved.</string>
+</dict>
+</plist>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>11D51</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>AppleEmbeddedAudio</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.driver.AppleEmbeddedAudio</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>AppleEmbeddedAudio</string>
+	<key>CFBundlePackageType</key>
+	<string>KEXT</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>iPhoneOS</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.1</string>
+	<key>DTCompiler</key>
+	<string></string>
+	<key>DTPlatformBuild</key>
+	<string></string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTPlatformVersion</key>
+	<string>6.0</string>
+	<key>DTSDKBuild</key>
+	<string>10A383</string>
+	<key>DTSDKName</key>
+	<string>iphoneos6.0.internal</string>
+	<key>DTXcode</key>
+	<string>0450</string>
+	<key>DTXcodeBuild</key>
+	<string>4G142</string>
+	<key>IOKitPersonalities</key>
+	<dict>
+		<key>AppleBasebandAudio</key>
+		<dict>
+			<key>IOClass</key>
+			<string>AppleSecondaryAudio</string>
+			<key>IOMatchCategory</key>
+			<string>AppleBasebandAudio</string>
+			<key>IONameMatch</key>
+			<string>audio-data,baseband</string>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>IOProviderClass</key>
+			<string>AppleARMIISDevice</string>
+			<key>device UID</key>
+			<string>Baseband</string>
+			<key>device name</key>
+			<string>Baseband</string>
+		</dict>
+		<key>AppleBasebandVoice</key>
+		<dict>
+			<key>IOClass</key>
+			<string>AppleSecondaryAudio</string>
+			<key>IOMatchCategory</key>
+			<string>AppleBasebandVoiceAudio</string>
+			<key>IONameMatch</key>
+			<string>audio-data,baseband-voice</string>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>IOProviderClass</key>
+			<string>AppleARMIISDevice</string>
+			<key>device UID</key>
+			<string>Baseband Voice</string>
+			<key>device name</key>
+			<string>Baseband Voice</string>
+		</dict>
+		<key>AppleBluetoothVoice</key>
+		<dict>
+			<key>IOClass</key>
+			<string>AppleSecondaryAudio</string>
+			<key>IOMatchCategory</key>
+			<string>AppleBluetoothVoiceAudio</string>
+			<key>IONameMatch</key>
+			<string>audio-data,bluetooth-voice</string>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>IOProviderClass</key>
+			<string>AppleARMIISDevice</string>
+			<key>device UID</key>
+			<string>Bluetooth Voice</string>
+			<key>device name</key>
+			<string>Bluetooth Voice</string>
+		</dict>
+		<key>AppleReferenceAudio</key>
+		<dict>
+			<key>IOClass</key>
+			<string>AppleSecondaryAudio</string>
+			<key>IOMatchCategory</key>
+			<string>AppleSecondaryAudio</string>
+			<key>IONameMatch</key>
+			<string>audio-data,reference</string>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>IOProviderClass</key>
+			<string>AppleARMIISDevice</string>
+			<key>device UID</key>
+			<string>Reference</string>
+			<key>device name</key>
+			<string>Reference</string>
+		</dict>
+		<key>AppleVoiceAudio</key>
+		<dict>
+			<key>IOClass</key>
+			<string>AppleSecondaryAudio</string>
+			<key>IOMatchCategory</key>
+			<string>AppleSecondaryAudio</string>
+			<key>IONameMatch</key>
+			<string>audio-data,voice</string>
+			<key>IOProbeScore</key>
+			<integer>1000</integer>
+			<key>IOProviderClass</key>
+			<string>AppleARMIISDevice</string>
+			<key>device UID</key>
+			<string>Voice</string>
+			<key>device name</key>
+			<string>Voice</string>
+		</dict>
+	</dict>
+	<key>MinimumOSVersion</key>
+	<string>6.0</string>
+	<key>OSBundleCompatibleVersion</key>
+	<string>1.1</string>
+	<key>OSBundleLibraries</key>
+	<dict>
+		<key>com.apple.driver.AppleARMPlatform</key>
+		<string>1.0.0</string>
+		<key>com.apple.iokit.AppleARMIISAudio</key>
+		<string>1.0</string>
+		<key>com.apple.iokit.IOAudio2Family</key>
+		<string>1.0</string>
+		<key>com.apple.iokit.IOHIDFamily</key>
+		<string>1.5</string>
+		<key>com.apple.iokit.IOMikeyBusFamily</key>
+		<string>1.0</string>
+		<key>com.apple.kpi.bsd</key>
+		<string>8.0</string>
+		<key>com.apple.kpi.iokit</key>
+		<string>8.0</string>
+		<key>com.apple.kpi.libkern</key>
+		<string>8.0</string>
+		<key>com.apple.kpi.mach</key>
+		<string>8.0</string>
+		<key>com.apple.kpi.unsupported</key>
+		<string>8.0</string>
+	</dict>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+</dict>
+</plist>
