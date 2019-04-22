@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo
+echo "warning: dplogs is deprecated. Please use avlogs instead." 1>&2
+echo
+
+avlogs "$@"
