@@ -4,7 +4,8 @@ Some of these files I dumped myself, others come from various sources on the int
 All of the code in the binaries is licensed and proprietary property of Apple and should never be reused without their consent.  
 
 ## ROM
-- Apple A8 RELEASE SecureROM dump  
+- Apple A11 RELEASE SecureROM dump
+- Apple A8X RELEASE SecureROM dump  
 - Apple A4/A3 RELEASE SecureROM dump  
 
 ## Kernel
