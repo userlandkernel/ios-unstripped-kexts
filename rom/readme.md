@@ -7,6 +7,9 @@ A dump of iPhone 3GS SecureROM (bootrom).
 A dump of iPhone 4 CDMA SecureROM (bootrom).
 
 ## SecureROM 1991.0.0.2.16 Release
-A dump of Apple A8 T7001 SecureROM (bootrom).  
-Apple A8 is used in for example the iPhone 6.  
+A dump of Apple A8X SecureROM (bootrom).  
+Apple A8X is used in for example the iPad Air 2.  
 A manually partially analyzed and symbolicated IDA database is also available here.  
+
+## SecureROM 3332.0.0.1.23 Release
+A dump of iPhone 8 SecureROM (bootrom).
