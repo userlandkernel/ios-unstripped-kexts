@@ -11,5 +11,8 @@ A dump of Apple A8X SecureROM (bootrom).
 Apple A8X is used in for example the iPad Air 2.  
 A manually partially analyzed and symbolicated IDA database is also available here.  
 
+## SecureROM 3135.0.0.2.3 Release
+A dump of A10 SecureROM (iPad Pro 10.5'' iPad Pro 2gen 12.9'', Apple TV 4K) (bootrom)
+
 ## SecureROM 3332.0.0.1.23 Release
 A dump of A11 (iPhone 8, iPhone 8+, iPhone X) SecureROM (bootrom).
