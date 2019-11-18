@@ -1,7 +1,10 @@
 # Apple iOS devices SecureROM
 
 ## SecureROM 359.3 Release
-A dump of iPhone 3GS SecureROM (bootrom).  
+A dump of iPhone 3GS SecureROM (old-bootrom).  
+
+## SecureROM 359.3.2 Release
+A dump of iPhone 3GS SecureROM (new-bootrom).  
 
 ## SecureROM 574.4 Release
 A dump of iPhone 4 CDMA SecureROM (bootrom).
